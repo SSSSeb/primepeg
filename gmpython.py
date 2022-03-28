@@ -7,7 +7,7 @@ import math
 from gmpy2 import mpz, digits, is_bpsw_prp
 from array import array
 
-os.system("convert -resize 32x /home/seb/HP_data/seb_bio.jpg /home/seb/HP_data/seb_bio_vvsmall.jpg")
+os.system("convert -resize 200x /home/seb/HP_data/seb_bio.jpg /home/seb/HP_data/seb_bio_vvsmall.jpg")
 os.system("mogrify -strip /home/seb/HP_data/seb_bio_vvsmall.jpg")
 os.system("exiftool -purejpg /home/seb/HP_data/seb_bio_vvsmall.jpg")
 
@@ -61,7 +61,8 @@ while True:
     print("%.0fs: %.1f ms/candidate (#%d done bpsw %d = %.0f percent, next %.0f)" % ((int)(tnow-t0) /
                                                                                      1000000000.0, (tnow-t0)/x/1000000.0, x, tot_processed_bpsw, tot_processed_bpsw/x*100.0, next_one))
 
-    print("%.0fs: %.1f ms/candidate (#%d done bpsw %d = %.0f percent, next %.0f)" %((int)(tnow-t0)/1000000000.0,(tnow-t0)/x/1000000.0,x,tot_processed_bpsw,tot_processed_bpsw/x*100.0,next_one))
+    print("%.0fs: %.1f ms/candidate (#%d done bpsw %d = %.0f percent, next %.0f)" % ((int)(tnow-t0) /
+                                                                                     1000000000.0, (tnow-t0)/x/1000000.0, x, tot_processed_bpsw, tot_processed_bpsw/x*100.0, next_one))
 
     
     NMAX = 1000
