@@ -20,10 +20,10 @@ a = mpz(niceint)
 
 print("init length (2) = ", a.num_digits(2))
 
-next_one=math.log(2,10)*a.num_digits(2)
-print("next prime in ~ log(2) * length = ",next)
+next_one = math.log(2, 10)*a.num_digits(2)
+print("next prime in ~ log(2) * length = ", next)
 
-#combien de zeros faudra t-il prefixer pour tomber sur des octets
+# combien de zeros faudra t-il prefixer pour tomber sur des octets
 if a.num_digits(2) % 8 != 0:
     zeroes = 8 - a.num_digits(2) % 8
 else:
@@ -31,7 +31,7 @@ else:
 
 print("je compte ajouter ", zeroes, "zero(s) au debut")
 
-#on saute sur le premier impair suivant si necessaire
+# on saute sur le premier impair suivant si necessaire
 if a % 2 == 0:
     a = a + 1
 
@@ -58,6 +58,8 @@ while True:
 
     tnow = time.clock_gettime_ns(time.CLOCK_MONOTONIC)
 
+    print("%.0fs: %.1f ms/candidate (#%d done bpsw %d = %.0f percent, next %.0f)" % ((int)(tnow-t0) /
+                                                                                     1000000000.0, (tnow-t0)/x/1000000.0, x, tot_processed_bpsw, tot_processed_bpsw/x*100.0, next_one))
 
     print("%.0fs: %.1f ms/candidate (#%d done bpsw %d = %.0f percent, next %.0f)" %((int)(tnow-t0)/1000000000.0,(tnow-t0)/x/1000000.0,x,tot_processed_bpsw,tot_processed_bpsw/x*100.0,next_one))
 
