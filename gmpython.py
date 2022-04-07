@@ -65,7 +65,7 @@ while True:
                                                                                      1000000000.0, (tnow-t0)/x/1000000.0, x, tot_processed_bpsw, tot_processed_bpsw/x*100.0, next_one))
 
     
-    NMAX = 1
+    NMAX = 1000
     # print("trying small divisors...")
 
     prime = True
