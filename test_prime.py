@@ -5,7 +5,7 @@ import time
 import sympy.ntheory as nt
 from gmpy2 import mpz, digits, is_bpsw_prp
 
-with open("./seb_bio_200x199.jpeg", "rb") as binfile:
+with open("/home/seb/HP_data/seb_bio_256x254.jpg", "rb") as binfile:
     bits_from_disk = binfile.read()
 
 prime_cand = int.from_bytes(bits_from_disk, "big", signed=False)
