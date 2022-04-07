@@ -1,0 +1,8 @@
+2013  podman system migrate
+2006  sudo apt install uidmap
+2008  echo "$(whoami):10000:65536" | sudo tee /etc/subuid
+2009  echo "$(whoami):10000:65536" | sudo tee /etc/subgid
+2010  cat /etc/subuid
+2011  cat /etc/subgid
+apparmor ? NFS ?
+                              
