@@ -3,6 +3,7 @@
 import time
 import os
 import math
+import gmpy2
 
 from gmpy2 import mpz, digits, is_bpsw_prp
 from array import array
@@ -21,7 +22,14 @@ a = mpz(niceint)
 print("init length (2) = ", a.num_digits(2))
 
 next_one = math.log(2, 10)*a.num_digits(2)
-print("next prime in ~ log(2) * length = ", next)
+print("next prime in approx ~ log(2) * length = ", next_one)
+
+# probabilité de trouver un nombre premier aux alentour de n = 1/ln(n)
+
+# print("proba to be prime close to this number is = %f percent" TBD SEB calculer le 1/ln(n) d'un entier mpz
+
+print("probabilité d'être premier au voisinage du candidat initial = %f percent" %
+      (100.0/gmpy2.log(a)))
 
 # combien de zeros faudra t-il prefixer pour tomber sur des octets
 if a.num_digits(2) % 8 != 0:
@@ -64,7 +72,6 @@ while True:
     print("%.0fs: %.1f ms/candidate (#%d done bpsw %d = %.0f percent, next %.0f)" % ((int)(tnow-t0) /
                                                                                      1000000000.0, (tnow-t0)/x/1000000.0, x, tot_processed_bpsw, tot_processed_bpsw/x*100.0, next_one))
 
-    
     NMAX = 1000
     # print("trying small divisors...")
 
